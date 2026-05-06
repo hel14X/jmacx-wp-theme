@@ -642,4 +642,114 @@ a:hover {
     .hero-actions {
         flex-direction: column;
     }
+
+    .product-layout-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-specs-card {
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
+/* Blog Archive & Single Post */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform var(--transition-slow);
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.blog-image {
+    display: block;
+    height: 220px;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-meta {
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+}
+
+.blog-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.blog-excerpt {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.btn-text {
+    color: var(--accent-blue);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.post-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Native WP Gallery Styling Support */
+.wp-block-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.wp-block-gallery .wp-block-image {
+    flex: 1 1 calc(50% - 1rem);
+    margin: 0;
+}
+
+.wp-block-gallery .wp-block-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-glass);
 }

@@ -37,6 +37,10 @@ get_header();
                         <p>Email: info@jmacxled.com<br>Phone: +1 (555) 019-8372</p>
                     </div>
                 </div>
+
+                <div class="contact-map-wrapper" style="margin-top: 2rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-glass);">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0634629633857!2d-122.40114068468205!3d37.78853757975685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858062f6b8b0e7%3A0x6b4eb50e32f57b64!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" width="100%" height="250" style="border:0; filter: invert(90%) hue-rotate(180deg);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
 
             <div class="contact-form-wrapper glass-panel fade-in" style="animation-delay: 0.2s;">

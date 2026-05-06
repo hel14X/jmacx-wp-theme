@@ -48,6 +48,12 @@ $bg_image = get_the_post_thumbnail_url( get_the_ID(), 'full' );
                             <?php endif; ?>
                         </ul>
                         
+                        <?php if ( ! empty( $spec_pdf ) ) : ?>
+                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-glass);">
+                                <a href="<?php echo esc_url( $spec_pdf ); ?>" class="btn-secondary btn-full" target="_blank" rel="noopener noreferrer">Download Spec Sheet (PDF)</a>
+                            </div>
+                        <?php endif; ?>
+                        
                         <div class="cta-wrapper">
                             <p class="cta-text">Ready to integrate this display into your next project?</p>
                             <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>?product=<?php echo urlencode( get_the_title() ); ?>" class="btn-primary btn-full">Request a Quote</a>

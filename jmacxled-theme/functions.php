@@ -217,6 +217,7 @@ function jmacxled_product_specs_callback( $post ) {
 
     $spec_1 = get_post_meta( $post->ID, '_jmacxled_spec_1', true );
     $spec_2 = get_post_meta( $post->ID, '_jmacxled_spec_2', true );
+    $spec_pdf = get_post_meta( $post->ID, '_jmacxled_spec_pdf', true );
 
     echo '<p><label for="jmacxled_spec_1">';
     _e( 'Spec 1 (e.g., Die-casting aluminum):', 'jmacxled' );
@@ -227,6 +228,11 @@ function jmacxled_product_specs_callback( $post ) {
     _e( 'Spec 2 (e.g., P2.604 - P4.81 Pitch):', 'jmacxled' );
     echo '</label><br />';
     echo '<input type="text" id="jmacxled_spec_2" name="jmacxled_spec_2" style="width:100%;" value="' . esc_attr( $spec_2 ) . '" /></p>';
+
+    echo '<p><label for="jmacxled_spec_pdf">';
+    _e( 'Spec Sheet PDF URL:', 'jmacxled' );
+    echo '</label><br />';
+    echo '<input type="url" id="jmacxled_spec_pdf" name="jmacxled_spec_pdf" style="width:100%;" value="' . esc_url( $spec_pdf ) . '" /></p>';
 }
 
 function jmacxled_save_product_meta( $post_id ) {
@@ -244,6 +250,9 @@ function jmacxled_save_product_meta( $post_id ) {
     }
     if ( isset( $_POST['jmacxled_spec_2'] ) ) {
         update_post_meta( $post_id, '_jmacxled_spec_2', sanitize_text_field( $_POST['jmacxled_spec_2'] ) );
+    }
+    if ( isset( $_POST['jmacxled_spec_pdf'] ) ) {
+        update_post_meta( $post_id, '_jmacxled_spec_pdf', esc_url_raw( $_POST['jmacxled_spec_pdf'] ) );
     }
 }
 add_action( 'save_post_jmacxled_product', 'jmacxled_save_product_meta' );
