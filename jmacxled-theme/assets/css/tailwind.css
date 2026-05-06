@@ -1169,6 +1169,15 @@ a:hover {
   padding-bottom: 1.5rem;
   color: var(--text-muted);
 }
+.custom-logo-link {
+  display: flex;
+  align-items: center;
+}
+.custom-logo {
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;

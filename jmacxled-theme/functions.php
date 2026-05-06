@@ -17,6 +17,15 @@ function jmacxled_setup() {
     // Enable support for Post Thumbnails on posts and pages.
     add_theme_support( 'post-thumbnails' );
 
+    // Add support for custom logo.
+    add_theme_support( 'custom-logo', array(
+        'height'      => 80,
+        'width'       => 250,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    ) );
+
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(
         array(

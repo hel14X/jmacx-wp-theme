@@ -17,9 +17,17 @@
 	<header id="masthead" class="site-header glass-header">
 		<div class="header-container">
             <div class="site-branding">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
-                    <span class="logo-text"><?php echo esc_html( get_theme_mod( 'header_logo_main', 'JMACX' ) ); ?><span class="accent"><?php echo esc_html( get_theme_mod( 'header_logo_accent', 'LED' ) ); ?></span></span>
-                </a>
+                <?php
+                if ( has_custom_logo() ) {
+                    the_custom_logo();
+                } else {
+                    ?>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
+                        <span class="logo-text"><?php echo esc_html( get_theme_mod( 'header_logo_main', 'JMACX' ) ); ?><span class="accent"><?php echo esc_html( get_theme_mod( 'header_logo_accent', 'LED' ) ); ?></span></span>
+                    </a>
+                    <?php
+                }
+                ?>
             </div><!-- .site-branding -->
 
             <nav id="site-navigation" class="main-navigation">
