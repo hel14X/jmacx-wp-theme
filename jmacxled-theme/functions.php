@@ -150,3 +150,101 @@ function jmacxled_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'jmacxled_customize_register' );
 
+/**
+ * Register Custom Post Type for Portfolio Items
+ */
+function jmacxled_register_portfolio_cpt() {
+    $labels = array(
+        'name'                  => _x( 'Portfolio Items', 'Post Type General Name', 'jmacxled' ),
+        'singular_name'         => _x( 'Portfolio Item', 'Post Type Singular Name', 'jmacxled' ),
+        'menu_name'             => __( 'Portfolio', 'jmacxled' ),
+        'name_admin_bar'        => __( 'Portfolio Item', 'jmacxled' ),
+        'archives'              => __( 'Item Archives', 'jmacxled' ),
+        'attributes'            => __( 'Item Attributes', 'jmacxled' ),
+        'parent_item_colon'     => __( 'Parent Item:', 'jmacxled' ),
+        'all_items'             => __( 'All Items', 'jmacxled' ),
+        'add_new_item'          => __( 'Add New Item', 'jmacxled' ),
+        'add_new'               => __( 'Add New', 'jmacxled' ),
+        'new_item'              => __( 'New Item', 'jmacxled' ),
+        'edit_item'             => __( 'Edit Item', 'jmacxled' ),
+        'update_item'           => __( 'Update Item', 'jmacxled' ),
+        'view_item'             => __( 'View Item', 'jmacxled' ),
+        'view_items'            => __( 'View Items', 'jmacxled' ),
+        'search_items'          => __( 'Search Item', 'jmacxled' ),
+        'not_found'             => __( 'Not found', 'jmacxled' ),
+        'not_found_in_trash'    => __( 'Not found in Trash', 'jmacxled' ),
+    );
+    $args = array(
+        'label'                 => __( 'Portfolio Item', 'jmacxled' ),
+        'description'           => __( 'LED Display Products', 'jmacxled' ),
+        'labels'                => $labels,
+        'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 5,
+        'menu_icon'             => 'dashicons-grid-view',
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => true,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'page',
+    );
+    register_post_type( 'jmacxled_product', $args );
+}
+add_action( 'init', 'jmacxled_register_portfolio_cpt', 0 );
+
+/**
+ * Add Custom Meta Box for Portfolio Specs
+ */
+function jmacxled_add_product_metaboxes() {
+    add_meta_box(
+        'jmacxled_product_specs',
+        __( 'Product Specifications', 'jmacxled' ),
+        'jmacxled_product_specs_callback',
+        'jmacxled_product',
+        'normal',
+        'default'
+    );
+}
+add_action( 'add_meta_boxes', 'jmacxled_add_product_metaboxes' );
+
+function jmacxled_product_specs_callback( $post ) {
+    wp_nonce_field( 'jmacxled_product_specs_data', 'jmacxled_product_specs_nonce' );
+
+    $spec_1 = get_post_meta( $post->ID, '_jmacxled_spec_1', true );
+    $spec_2 = get_post_meta( $post->ID, '_jmacxled_spec_2', true );
+
+    echo '<p><label for="jmacxled_spec_1">';
+    _e( 'Spec 1 (e.g., Die-casting aluminum):', 'jmacxled' );
+    echo '</label><br />';
+    echo '<input type="text" id="jmacxled_spec_1" name="jmacxled_spec_1" style="width:100%;" value="' . esc_attr( $spec_1 ) . '" /></p>';
+
+    echo '<p><label for="jmacxled_spec_2">';
+    _e( 'Spec 2 (e.g., P2.604 - P4.81 Pitch):', 'jmacxled' );
+    echo '</label><br />';
+    echo '<input type="text" id="jmacxled_spec_2" name="jmacxled_spec_2" style="width:100%;" value="' . esc_attr( $spec_2 ) . '" /></p>';
+}
+
+function jmacxled_save_product_meta( $post_id ) {
+    if ( ! isset( $_POST['jmacxled_product_specs_nonce'] ) || ! wp_verify_nonce( $_POST['jmacxled_product_specs_nonce'], 'jmacxled_product_specs_data' ) ) {
+        return;
+    }
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+    if ( isset( $_POST['jmacxled_spec_1'] ) ) {
+        update_post_meta( $post_id, '_jmacxled_spec_1', sanitize_text_field( $_POST['jmacxled_spec_1'] ) );
+    }
+    if ( isset( $_POST['jmacxled_spec_2'] ) ) {
+        update_post_meta( $post_id, '_jmacxled_spec_2', sanitize_text_field( $_POST['jmacxled_spec_2'] ) );
+    }
+}
+add_action( 'save_post_jmacxled_product', 'jmacxled_save_product_meta' );
+

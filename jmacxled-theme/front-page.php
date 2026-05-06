@@ -32,57 +32,48 @@ get_header();
             </div>
 
             <div class="portfolio-grid">
-                <!-- Rental LED -->
-                <div class="portfolio-card fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="card-image rental-bg"></div>
-                    <div class="card-content">
-                        <h3>Rental LED Systems</h3>
-                        <p>For concerts, stage productions, and touring events. Featuring precision seamless stitching, ultra-lightweight structure, and 3840 Hz refresh rates.</p>
-                        <ul class="spec-list">
-                            <li><i class="icon-check"></i> Die-casting aluminum</li>
-                            <li><i class="icon-check"></i> P2.604 - P4.81 Pitch</li>
-                        </ul>
-                    </div>
-                </div>
+                <?php
+                $portfolio_query = new WP_Query( array(
+                    'post_type'      => 'jmacxled_product',
+                    'posts_per_page' => -1,
+                    'orderby'        => 'date',
+                    'order'          => 'ASC'
+                ) );
 
-                <!-- Outdoor Energy Saving -->
-                <div class="portfolio-card fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="card-image outdoor-bg"></div>
-                    <div class="card-content">
-                        <h3>Outdoor Energy Saving</h3>
-                        <p>High impact advertising with IP66 protection. Maintains visibility under direct sunlight while remaining operational in challenging conditions.</p>
-                        <ul class="spec-list">
-                            <li><i class="icon-check"></i> >6500 cd/m² Brightness</li>
-                            <li><i class="icon-check"></i> Front & Rear Maintenance</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Indoor Fine Pitch -->
-                <div class="portfolio-card fade-in-up" style="animation-delay: 0.3s;">
-                    <div class="card-image indoor-bg"></div>
-                    <div class="card-content">
-                        <h3>Indoor Fine Pitch</h3>
-                        <p>Optimized for broadcast studios and control centers. Sharp image reproduction, color accuracy, and consistent brightness.</p>
-                        <ul class="spec-list">
-                            <li><i class="icon-check"></i> P1.25 - P2.5 Pitch</li>
-                            <li><i class="icon-check"></i> Advanced ripple-free tech</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Creative LED -->
-                <div class="portfolio-card fade-in-up" style="animation-delay: 0.4s;">
-                    <div class="card-image creative-bg"></div>
-                    <div class="card-content">
-                        <h3>Creative LED Displays</h3>
-                        <p>Unconventional digital installations. Spheres, domes, cubes, and glass-free 3D LED displays for immersive environments.</p>
-                        <ul class="spec-list">
-                            <li><i class="icon-check"></i> Flexible & Arc configs</li>
-                            <li><i class="icon-check"></i> Custom diameters up to 17m</li>
-                        </ul>
-                    </div>
-                </div>
+                if ( $portfolio_query->have_posts() ) :
+                    $delay = 0.1;
+                    while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post();
+                        $bg_image = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+                        $spec_1 = get_post_meta( get_the_ID(), '_jmacxled_spec_1', true );
+                        $spec_2 = get_post_meta( get_the_ID(), '_jmacxled_spec_2', true );
+                        ?>
+                        <div class="portfolio-card fade-in-up" style="animation-delay: <?php echo esc_attr( $delay ); ?>s;">
+                            <div class="card-image" <?php if ( $bg_image ) { echo 'style="background-image: url(\'' . esc_url( $bg_image ) . '\');"'; } else { echo 'style="background-color: rgba(255,255,255,0.05);"'; } ?>></div>
+                            <div class="card-content">
+                                <h3><?php the_title(); ?></h3>
+                                <?php if ( has_excerpt() ) {
+                                    the_excerpt();
+                                } else {
+                                    echo '<p>' . wp_trim_words( get_the_content(), 20, '...' ) . '</p>';
+                                } ?>
+                                <ul class="spec-list">
+                                    <?php if ( ! empty( $spec_1 ) ) : ?>
+                                        <li><i class="icon-check"></i> <?php echo esc_html( $spec_1 ); ?></li>
+                                    <?php endif; ?>
+                                    <?php if ( ! empty( $spec_2 ) ) : ?>
+                                        <li><i class="icon-check"></i> <?php echo esc_html( $spec_2 ); ?></li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <?php
+                        $delay += 0.1;
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo '<p>' . esc_html__( 'No portfolio items found. Please add new LED products in the WordPress Admin > Portfolio!', 'jmacxled' ) . '</p>';
+                endif;
+                ?>
             </div>
         </div>
     </section>
