@@ -85,6 +85,14 @@ function jmacxled_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'header_cta_link', array( 'default' => '#contact', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'header_cta_link', array( 'label' => __( 'CTA Button Link', 'jmacxled' ), 'section' => 'jmacxled_header_section' ) );
 
+    $wp_customize->add_setting( 'logo_max_height', array( 'default' => 50, 'sanitize_callback' => 'absint' ) );
+    $wp_customize->add_control( 'logo_max_height', array(
+        'label'       => __( 'Custom Logo Max Height (px)', 'jmacxled' ),
+        'section'     => 'jmacxled_header_section',
+        'type'        => 'number',
+        'input_attrs' => array( 'min' => 20, 'max' => 150, 'step' => 1 ),
+    ) );
+
     // Hero Section
     $wp_customize->add_section( 'jmacxled_hero_section', array(
         'title'    => __( 'Hero Section', 'jmacxled' ),

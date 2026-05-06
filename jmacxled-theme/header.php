@@ -6,6 +6,12 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
     <meta name="description" content="JMACXLED - Professional LED Wall Solutions. Creative, Indoor, Outdoor, and Rental LED Display Systems.">
 	<?php wp_head(); ?>
+    <style>
+        .custom-logo {
+            max-height: <?php echo esc_attr( get_theme_mod( 'logo_max_height', 50 ) ); ?>px !important;
+            width: auto;
+        }
+    </style>
 </head>
 
 <body <?php body_class(); ?>>
