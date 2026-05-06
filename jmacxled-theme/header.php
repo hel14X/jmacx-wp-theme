@@ -29,15 +29,25 @@
                     <span class="hamburger"></span>
                 </button>
                 <?php
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'menu-1',
-                        'menu_id'        => 'primary-menu',
-                        'container'      => false,
-                        'fallback_cb'    => false,
-                        'items_wrap'     => '<ul id="%1$s" class="%2$s nav-list">%3$s</ul>',
-                    )
-                );
+                if ( has_nav_menu( 'menu-1' ) ) {
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-1',
+                            'menu_id'        => 'primary-menu',
+                            'container'      => false,
+                            'items_wrap'     => '<ul id="%1$s" class="%2$s nav-list">%3$s</ul>',
+                        )
+                    );
+                } else {
+                    ?>
+                    <ul class="nav-list">
+                        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/#portfolio' ) ); ?>">Portfolio</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/category/news' ) ); ?>">News</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
+                    </ul>
+                    <?php
+                }
                 ?>
                 <a href="#contact" class="btn-primary header-cta">Get a Quote</a>
             </nav><!-- #site-navigation -->

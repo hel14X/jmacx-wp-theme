@@ -25,7 +25,7 @@ get_header();
 
     <!-- PRODUCT PORTFOLIO SECTION -->
     <section id="portfolio" class="portfolio-section section-padding">
-        <div class="container">
+        <div class="max-w-[1200px] mx-auto px-8">
             <div class="section-header fade-in">
                 <h2>Product <span class="accent">Portfolio</span></h2>
                 <p>Engineered to deliver high-performance visual systems for every environment.</p>
@@ -83,7 +83,7 @@ get_header();
 
     <!-- HIGHLIGHTS / SPECS SECTION -->
     <section class="specs-section section-padding dark-bg">
-        <div class="container">
+        <div class="max-w-[1200px] mx-auto px-8">
             <div class="specs-wrapper glass-panel fade-in">
                 <div class="specs-text">
                     <h2>Technical <span class="gradient-text">Excellence</span></h2>
@@ -113,7 +113,7 @@ get_header();
 
     <!-- SERVICES SECTION -->
     <section class="services-section section-padding">
-        <div class="container">
+        <div class="max-w-[1200px] mx-auto px-8">
             <div class="section-header fade-in">
                 <h2>Our <span class="accent">Services</span></h2>
                 <p>Comprehensive LED solutions designed for durability and efficiency.</p>
@@ -140,7 +140,7 @@ get_header();
 
     <!-- TESTIMONIALS SECTION -->
     <section class="testimonials-section section-padding dark-bg">
-        <div class="container">
+        <div class="max-w-[1200px] mx-auto px-8">
             <div class="section-header fade-in">
                 <h2>What Our <span class="gradient-text">Clients Say</span></h2>
                 <p>Here are some thoughts from our satisfied clients.</p>
@@ -170,7 +170,7 @@ get_header();
 
     <!-- FAQ SECTION -->
     <section class="faq-section section-padding">
-        <div class="container faq-container">
+        <div class="max-w-[800px] mx-auto px-8">
             <div class="section-header fade-in">
                 <h2>Frequently Asked <span class="accent">Questions</span></h2>
                 <p>Get answers to your LED installation and product questions.</p>
