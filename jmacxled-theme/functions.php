@@ -20,8 +20,9 @@ function jmacxled_setup() {
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(
         array(
-            'menu-1' => esc_html__( 'Primary', 'jmacxled' ),
-            'footer' => esc_html__( 'Footer Menu', 'jmacxled' ),
+            'menu-1'          => esc_html__( 'Primary', 'jmacxled' ),
+            'footer-products' => esc_html__( 'Footer Products', 'jmacxled' ),
+            'footer-company'  => esc_html__( 'Footer Company', 'jmacxled' ),
         )
     );
 
@@ -57,6 +58,24 @@ add_action( 'wp_enqueue_scripts', 'jmacxled_scripts' );
  * Customizer Additions
  */
 function jmacxled_customize_register( $wp_customize ) {
+    // Header Section
+    $wp_customize->add_section( 'jmacxled_header_section', array(
+        'title'    => __( 'Header Settings', 'jmacxled' ),
+        'priority' => 20,
+    ) );
+
+    $wp_customize->add_setting( 'header_logo_main', array( 'default' => 'JMACX', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'header_logo_main', array( 'label' => __( 'Logo Main Text', 'jmacxled' ), 'section' => 'jmacxled_header_section' ) );
+
+    $wp_customize->add_setting( 'header_logo_accent', array( 'default' => 'LED', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'header_logo_accent', array( 'label' => __( 'Logo Accent Text', 'jmacxled' ), 'section' => 'jmacxled_header_section' ) );
+
+    $wp_customize->add_setting( 'header_cta_text', array( 'default' => 'Get a Quote', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'header_cta_text', array( 'label' => __( 'CTA Button Text', 'jmacxled' ), 'section' => 'jmacxled_header_section' ) );
+
+    $wp_customize->add_setting( 'header_cta_link', array( 'default' => '#contact', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'header_cta_link', array( 'label' => __( 'CTA Button Link', 'jmacxled' ), 'section' => 'jmacxled_header_section' ) );
+
     // Hero Section
     $wp_customize->add_section( 'jmacxled_hero_section', array(
         'title'    => __( 'Hero Section', 'jmacxled' ),

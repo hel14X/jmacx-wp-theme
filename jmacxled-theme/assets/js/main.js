@@ -75,12 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Close all others
             faqItems.forEach(otherItem => {
                 otherItem.classList.remove('active');
-                otherItem.querySelector('.faq-answer').style.maxHeight = null;
             });
             
             if (!isOpen) {
                 item.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + "px";
             }
         });
     });

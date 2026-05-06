@@ -18,7 +18,7 @@
 		<div class="header-container">
             <div class="site-branding">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
-                    <span class="logo-text">JMACX<span class="accent">LED</span></span>
+                    <span class="logo-text"><?php echo esc_html( get_theme_mod( 'header_logo_main', 'JMACX' ) ); ?><span class="accent"><?php echo esc_html( get_theme_mod( 'header_logo_accent', 'LED' ) ); ?></span></span>
                 </a>
             </div><!-- .site-branding -->
 
@@ -44,12 +44,13 @@
                         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
                         <li><a href="<?php echo esc_url( home_url( '/#portfolio' ) ); ?>">Portfolio</a></li>
                         <li><a href="<?php echo esc_url( home_url( '/category/news' ) ); ?>">News</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About Us</a></li>
                         <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
                     </ul>
                     <?php
                 }
                 ?>
-                <a href="#contact" class="btn-primary header-cta">Get a Quote</a>
+                <a href="<?php echo esc_url( get_theme_mod( 'header_cta_link', '#contact' ) ); ?>" class="btn-primary header-cta"><?php echo esc_html( get_theme_mod( 'header_cta_text', 'Get a Quote' ) ); ?></a>
             </nav><!-- #site-navigation -->
         </div>
 	</header><!-- #masthead -->
