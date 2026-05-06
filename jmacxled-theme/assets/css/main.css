@@ -471,6 +471,142 @@ a:hover {
     transform: translateY(0);
 }
 
+/* Single Product Page & Contact Page */
+.page-hero, .single-product-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 var(--spacing-md);
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.page-hero::before, .single-product-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10,10,15,0.2) 0%, var(--bg-dark) 100%);
+    z-index: -1;
+}
+
+.product-layout-grid, .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.product-description h2, .contact-info h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-body {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.content-body p {
+    margin-bottom: 1.5rem;
+}
+
+.product-specs-card {
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-glass);
+    position: sticky;
+    top: 100px;
+}
+
+.product-specs-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.product-specs-card .spec-list li {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+}
+
+.cta-wrapper {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.cta-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.btn-full {
+    display: block;
+    width: 100%;
+}
+
+.info-blocks {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item h4 {
+    color: var(--accent-blue);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-wrapper {
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-glass);
+}
+
+.contact-form-wrapper h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.custom-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.custom-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.custom-form input, .custom-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--border-glass);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    transition: border-color var(--transition-fast);
+}
+
+.custom-form input:focus, .custom-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .menu-toggle {

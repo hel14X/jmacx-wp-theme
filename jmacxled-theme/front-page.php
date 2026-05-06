@@ -50,7 +50,7 @@ get_header();
                         <div class="portfolio-card fade-in-up" style="animation-delay: <?php echo esc_attr( $delay ); ?>s;">
                             <div class="card-image" <?php if ( $bg_image ) { echo 'style="background-image: url(\'' . esc_url( $bg_image ) . '\');"'; } else { echo 'style="background-color: rgba(255,255,255,0.05);"'; } ?>></div>
                             <div class="card-content">
-                                <h3><?php the_title(); ?></h3>
+                                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                 <?php if ( has_excerpt() ) {
                                     the_excerpt();
                                 } else {
@@ -64,6 +64,9 @@ get_header();
                                         <li><i class="icon-check"></i> <?php echo esc_html( $spec_2 ); ?></li>
                                     <?php endif; ?>
                                 </ul>
+                                <div style="margin-top: auto; padding-top: 1.5rem;">
+                                    <a href="<?php the_permalink(); ?>" class="btn-secondary" style="width: 100%; text-align: center;">View Details</a>
+                                </div>
                             </div>
                         </div>
                         <?php
