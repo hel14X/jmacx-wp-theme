@@ -1,5 +1,22 @@
     <footer id="colophon" class="site-footer">
         <div class="footer-container">
+            
+            <div class="newsletter-wrapper glass-panel" style="margin-bottom: 3rem; padding: 2rem; border-radius: 16px; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                <div class="newsletter-text" style="flex: 1 1 300px;">
+                    <h3>Stay Updated with Our Newsletter</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Join our mailing list to receive the latest updates and exclusive offers on LED products and services. We promise not to spam your inbox.</p>
+                </div>
+                <div class="newsletter-form" style="flex: 1 1 400px;">
+                    <form action="#" method="POST" class="custom-form">
+                        <div style="display: flex; gap: 1rem;">
+                            <input type="email" name="email" placeholder="Enter your email" required style="flex: 1; padding: 0.8rem; border-radius: 8px;">
+                            <button type="submit" class="btn-primary" style="padding: 0.8rem 1.5rem; border-radius: 8px;">Subscribe Now</button>
+                        </div>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">By subscribing you're confirming that you agree with our Terms and Conditions.</p>
+                    </form>
+                </div>
+            </div>
+
             <div class="footer-grid">
                 <div class="footer-col about-col">
                     <h3 class="footer-title">JMACX<span class="accent">LED</span></h3>

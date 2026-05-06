@@ -111,6 +111,91 @@ get_header();
         </div>
     </section>
 
+    <!-- SERVICES SECTION -->
+    <section class="services-section section-padding">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our <span class="accent">Services</span></h2>
+                <p>Comprehensive LED solutions designed for durability and efficiency.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glass-panel fade-in-up">
+                    <div class="service-icon"><i class="icon-consult"></i></div>
+                    <h3>LED Consultation</h3>
+                    <p>Our LED consultation services focus on understanding your unique needs. We provide tailored advice to help you choose the right solutions.</p>
+                </div>
+                <div class="service-card glass-panel fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="service-icon"><i class="icon-install"></i></div>
+                    <h3>Installation Services</h3>
+                    <p>We specialize in professional LED installation, ensuring every setup is optimized for performance. Our skilled team handles everything.</p>
+                </div>
+                <div class="service-card glass-panel fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="service-icon"><i class="icon-maintenance"></i></div>
+                    <h3>Maintenance Support</h3>
+                    <p>Our maintenance and repair services ensure your LED systems remain fully operational. We provide ongoing support to address any issues promptly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section section-padding dark-bg">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>What Our <span class="gradient-text">Clients Say</span></h2>
+                <p>Here are some thoughts from our satisfied clients.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-panel fade-in-up">
+                    <p class="quote">"The LED upgrade transformed our office. Our energy bills have dropped significantly, and the bright lighting has improved our working environment."</p>
+                    <div class="client-info">
+                        <strong>John D.</strong>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-panel fade-in-up" style="animation-delay: 0.1s;">
+                    <p class="quote">"I was impressed with the service from start to finish. The team was knowledgeable, professional, and delivered exactly what we needed."</p>
+                    <div class="client-info">
+                        <strong>Sarah L.</strong>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-panel fade-in-up" style="animation-delay: 0.2s;">
+                    <p class="quote">"The consultation really helped us design the perfect lighting scheme. The installation was hassle-free, and we couldn't be happier with the results."</p>
+                    <div class="client-info">
+                        <strong>Emily T.</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section section-padding">
+        <div class="container faq-container">
+            <div class="section-header fade-in">
+                <h2>Frequently Asked <span class="accent">Questions</span></h2>
+                <p>Get answers to your LED installation and product questions.</p>
+            </div>
+            <div class="faq-accordion fade-in-up">
+                <div class="faq-item">
+                    <button class="faq-question">How long does the installation process take?</button>
+                    <div class="faq-answer"><p>Installation timelines vary based on the scale of the project, but typical indoor setups take 1-3 days, while large outdoor billboards may take longer.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What are the costs involved?</button>
+                    <div class="faq-answer"><p>Costs depend on screen size, pixel pitch, and structural requirements. Contact us for a detailed, customized quote.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you offer maintenance services?</button>
+                    <div class="faq-answer"><p>Yes, we offer comprehensive ongoing maintenance and support contracts to ensure your display stays perfectly lit.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I customize my LED setup?</button>
+                    <div class="faq-answer"><p>Absolutely. We specialize in custom shapes, curves, and unique architectural integrations.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </main><!-- #primary -->
 
 <?php

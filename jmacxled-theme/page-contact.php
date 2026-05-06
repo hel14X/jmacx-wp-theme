@@ -30,16 +30,16 @@ get_header();
                 <div class="info-blocks">
                     <div class="info-item">
                         <h4>Headquarters</h4>
-                        <p>123 Display Avenue<br>Tech District, TD 90210</p>
+                        <p>123 LED Street<br>London, UK</p>
                     </div>
                     <div class="info-item">
                         <h4>Direct Contact</h4>
-                        <p>Email: info@jmacxled.com<br>Phone: +1 (555) 019-8372</p>
+                        <p>Email: info@jmacxled.com<br>Phone: +44 1234 567890</p>
                     </div>
                 </div>
 
                 <div class="contact-map-wrapper" style="margin-top: 2rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-glass);">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0634629633857!2d-122.40114068468205!3d37.78853757975685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858062f6b8b0e7%3A0x6b4eb50e32f57b64!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" width="100%" height="250" style="border:0; filter: invert(90%) hue-rotate(180deg);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.5463435165187!2d-0.122145384230248!3d51.50329727963462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2slastminute.com%20London%20Eye!5e0!3m2!1sen!2suk!4v1680000000000!5m2!1sen!2suk" width="100%" height="250" style="border:0; filter: invert(90%) hue-rotate(180deg);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
