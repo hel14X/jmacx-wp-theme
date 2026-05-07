@@ -1178,6 +1178,15 @@ a:hover {
   width: auto;
   object-fit: contain;
 }
+.portfolio-card, .service-card, .testimonial-card, .blog-card {
+  text-align: center;
+}
+.card-content {
+  align-items: center;
+}
+.spec-list {
+  margin: 0 auto;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;

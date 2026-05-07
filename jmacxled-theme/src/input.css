@@ -959,3 +959,9 @@ a:hover {
 .custom-logo-link { display: flex; align-items: center; }
 .custom-logo { max-height: 50px; width: auto; object-fit: contain; }
 
+
+/* Force center alignment for cards and their contents */
+.portfolio-card, .service-card, .testimonial-card, .blog-card { text-align: center; }
+.card-content { align-items: center; }
+.spec-list { margin: 0 auto; }
+

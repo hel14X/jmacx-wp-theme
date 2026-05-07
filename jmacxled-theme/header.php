@@ -64,7 +64,7 @@
                     <?php
                 }
                 ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'header_cta_link', '#contact' ) ); ?>" class="btn-primary header-cta"><?php echo esc_html( get_theme_mod( 'header_cta_text', 'Get a Quote' ) ); ?></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'header_cta_link', '/contact' ) ); ?>" class="btn-primary header-cta"><?php echo esc_html( get_theme_mod( 'header_cta_text', 'Get a Quote' ) ); ?></a>
             </nav><!-- #site-navigation -->
         </div>
 	</header><!-- #masthead -->
