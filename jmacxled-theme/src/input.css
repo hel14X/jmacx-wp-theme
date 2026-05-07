@@ -685,6 +685,22 @@ a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
+    :root {
+        --spacing-md: 1.5rem;
+        --spacing-lg: 3rem;
+        --spacing-xl: 4rem;
+    }
+
+    .portfolio-grid, .services-grid, .testimonials-grid, .blog-grid, .specs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .specs-text {
+        flex: 1 1 100%;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+    }
+
     .menu-toggle {
         display: flex;
     }
