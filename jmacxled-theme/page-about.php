@@ -44,7 +44,7 @@ get_header();
                 <p>Engineered for high-impact visual performance across all environments.</p>
             </div>
             
-            <div class="services-grid" style="margin-top: var(--spacing-lg);">
+            <div class="services-grid">
                 <div class="service-card glass-panel fade-in-up">
                     <div class="service-icon" style="color: var(--accent-blue); font-size: 2.5rem; margin-bottom: 1.5rem;"><i class="icon-install"></i></div>
                     <h3>Rental LED Display Systems</h3>
