@@ -24,7 +24,7 @@ get_header();
     <!-- COMPANY OVERVIEW SECTION -->
     <section class="section-padding dark-bg">
         <div class="max-w-[1200px] mx-auto px-8">
-            <div class="glass-panel fade-in-up" style="padding: var(--spacing-xl); border-radius: 24px; text-align: center;">
+            <div class="glass-panel fade-in-up" style="padding: var(--spacing-lg); border-radius: 24px; text-align: center;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Our <span class="accent">Mission & Vision</span></h2>
                 <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-main); margin-bottom: 2rem; max-width: 800px; margin: 0 auto;">
                     JMACXLED combines engineering precision with design flexibility to produce advanced LED technologies for both indoor and outdoor environments. With a strong foundation in durability, innovation, and visual excellence, we serve industries including live events, advertising, retail, exhibitions, corporate environments, and large-scale architectural installations.
